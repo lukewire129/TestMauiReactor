@@ -38,6 +38,13 @@
     <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Resources\Fonts\Barlow-Light.otf" />
+    <None Remove="Resources\Fonts\Barlow-Medium.otf" />
+    <None Remove="Resources\Fonts\Barlow-Regular.otf" />
+    <None Remove="Resources\Fonts\Barlow-SemiBold.otf" />
+    <None Remove="Resources\Fonts\JungleFever.ttf" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Jamesnet.Design" Version="1.0.0.5" />
     <PackageReference Include="Reactor.Maui" Version="1.0.129" />
     <PackageReference Include="Reactor.Maui.Canvas" Version="1.0.129" />
