@@ -44,6 +44,7 @@
     <None Remove="Resources\Fonts\Barlow-SemiBold.otf" />
     <None Remove="Resources\Fonts\JungleFever.ttf" />
     <None Remove="Resources\Images\logo.png" />
+    <None Remove="Resources\Images\running.png" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Jamesnet.Design" Version="1.0.0.5" />
