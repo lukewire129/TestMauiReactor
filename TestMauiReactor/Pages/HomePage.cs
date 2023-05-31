@@ -18,13 +18,13 @@ namespace TestMauiReactor.Pages
                         .FontFamily("BarlowSemiBold")
                         .TextColor(Colors.Black)
                         .Text("Hello")
-                        .FontSize(22),
+                        .FontSize(24),
 
                         new Label()
                         .FontFamily("BarlowSemiBold")
                         .TextColor(Color.FromArgb("535cdd"))
                         .Text("LukeWire")
-                        .FontSize(22)
+                        .FontSize(24)
                     }
                     .GridRow(0)
                     .GridColumn(0),
@@ -58,7 +58,7 @@ namespace TestMauiReactor.Pages
                             .Text("Today you run for")
                             .TextColor(Colors.Black)
                             .HorizontalTextAlignment(TextAlignment.Center)
-                            .FontSize(30)
+                            .FontSize(32)
                             .FontFamily("BarlowSemiBold"),
 
                             new Label()
@@ -94,16 +94,33 @@ namespace TestMauiReactor.Pages
 
                     new Border()
                     {
-                        new Label()
-                            .Text("Today you run for")
-                            .TextColor(Colors.Black)
-                            .HorizontalTextAlignment(TextAlignment.Center)
-                            .FontSize(30)
-                            .FontFamily("BarlowSemiBold"),
+                        new Grid("*","*,*")
+                        {
+                            new VStack(10)
+                            {
+                                HealthText("3680", "steps"),
+
+                                new Line()
+                                .HeightRequest(0.5)
+                                .BackgroundColor(Colors.White)
+                                .Opacity(0.1),
+
+                                HealthText("98", "bpm"),
+
+                                 new Line()
+                                .HeightRequest(0.5)
+                                .BackgroundColor(Colors.White)
+                                .Opacity(0.1),
+
+                                HealthText("460", "calories"),
+                            }
+                            .GridColumn(0)
+                        }
+                        .Padding(50,20)
                     }
+                    .Margin(0,30)
                     .GridRow(3)
-                    .HFill()
-                    .HeightRequest(300)
+                    .HeightRequest(350)
                     .StrokeShape(new RoundRectangle()
                                     .CornerRadius(new CornerRadius(30)))
                     .Background(new Microsoft.Maui.Controls.LinearGradientBrush()
@@ -129,7 +146,7 @@ namespace TestMauiReactor.Pages
                 new Label()
                 .TextColor(Colors.LightSlateGray)
                 .Text(week)
-                .FontSize(18)
+                .FontSize(24)
                 .FontFamily("BarlowRegular")
                 .HCenter()
                 ,
@@ -140,6 +157,30 @@ namespace TestMauiReactor.Pages
                 .FontSize(30)
                 .FontFamily("BarlowSemiBold")
                 .HCenter()
+            };
+        }
+        Grid HealthText(string count, string unit)
+        {
+            return new Grid()
+            {
+                new VStack()
+                {
+                    new Label()
+                        .Text(count)
+                        .TextColor(Colors.White)
+                        .FontSize(50)
+                        .FontFamily("BarlowSemiBold")
+                        ,
+
+                    new Label()
+                        .Text(unit)
+                        .TextColor(Colors.White)
+                        .FontSize(20)
+                        .Opacity(0.5)
+                        .FontFamily("BarlowSemiRegular")
+                        .HEnd(),
+                }
+                .HEnd()
             };
         }
     }
